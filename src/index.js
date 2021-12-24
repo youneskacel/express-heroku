@@ -4,9 +4,10 @@ import { fileURLToPath } from 'url'
 
 const app = express()
 
-const port = 10020
+const port = 5000
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const publicDirectory = path.join(__dirname,'../public')
 console.log(publicDirectory)
-app.use(express.static(publicDirectory)).listen(process.env.PORT || 5000)
+app.use(express.static(publicDirectory))
+app.listen(port)
