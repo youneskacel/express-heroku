@@ -9,6 +9,4 @@ const port = 10020
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const publicDirectory = path.join(__dirname,'../public')
 console.log(publicDirectory)
-app.use(express.static(publicDirectory)).listen(10020 , ()=>{ 
-    console.log('server is up on port ', port )
-})
+app.use(express.static(publicDirectory)).listen(process.env.PORT || 5000)
